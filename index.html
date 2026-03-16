@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Daily Brief — Pre-Market Intelligence for Active Traders</title>
+<meta name="description" content="Concise daily pre-market intelligence covering indices, macro events, key movers, and actionable trading themes. Delivered every morning at 6AM ET.">
+<meta property="og:title" content="The Daily Brief — Pre-Market Intelligence for Active Traders">
+<meta property="og:description" content="Your 3-minute edge before the bell. Join 10,000+ active traders getting pre-market intelligence daily.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* =============================================
+   CSS CUSTOM PROPERTIES
+   ============================================= */
+:root {
+  /* Core palette */
+  --bg-primary: #0a1628;
+  --bg-secondary: #0f1d32;
+  --bg-card: #131f35;
+  --bg-card-hover: #182642;
+  --bg-terminal: #0c1220;
+  --bg-surface: #111d30;
+
+  --text-primary: #e8edf5;
+  --text-secondary: #8b99b0;
+  --text-muted: #5a6a82;
+  --text-dim: #3d4f68;
+
+  --accent-blue: #1a73e8;
+  --accent-blue-hover: #2b82f5;
+  --accent-blue-glow: rgba(26, 115, 232, 0.15);
+  --accent-blue-subtle: rgba(26, 115, 232, 0.08);
+
+  --green: #00c853;
+  --green-dim: rgba(0, 200, 83, 0.15);
+  --red: #ff3d57;
+  --red-dim: rgba(255, 61, 87, 0.15);
+
+  --border: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --section-pad: clamp(3rem, 8vw, 6rem);
+  --container-max: 1200px;
+  --container-pad: clamp(1rem, 4vw, 2rem);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+/* Light mode */
+[data-theme="light"] {
+  --bg-primary: #f5f7fa;
+  --bg-secondary: #edf0f5;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8f9fb;
+  --bg-terminal: #f0f2f6;
+  --bg-surface: #ffffff;
+
+  --text-primary: #0f1d32;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --text-dim: #a0aec0;
+
+  --accent-blue: #1a63d0;
+  --accent-blue-hover: #1555b8;
+  --accent-blue-glow: rgba(26, 99, 208, 0.1);
+  --accent-blue-subtle: rgba(26, 99, 208, 0.05);
+
+  --green: #0b9e42;
+  --green-dim: rgba(11, 158, 66, 0.1);
+  --red: #d93025;
+  --red-dim: rgba(217, 48, 37, 0.1);
+
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.14);
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover { color: var(--accent-blue-hover); }
+
+img { max-width: 100%; display: block; }
+
+/* =============================================
+   CONTAINER
+   ============================================= */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* =============================================
+   NAVIGATION
+   ============================================= */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 22, 40, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme="light"] .nav {
+  background: rgba(245, 247, 250, 0.9);
+}
+
+.nav--scrolled {
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.2);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nav__logo svg {
+  flex-shrink: 0;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav__links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+.nav__links a:hover { color: var(--text-primary); }
+
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  background: var(--accent-blue);
+  color: #fff !important;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.nav__cta:hover {
+  background: var(--accent-blue-hover);
+  transform: translateY(-1px);
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+.theme-toggle:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .mobile-toggle { display: flex; }
+
+  .nav__links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-primary);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem var(--container-pad);
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform 0.35s var(--ease-out);
+    border-top: 1px solid var(--border);
+  }
+
+  .nav__links.active {
+    transform: translateX(0);
+  }
+
+  .nav__links li {
+    width: 100%;
+  }
+
+  .nav__links a {
+    display: block;
+    padding: 14px 0;
+    font-size: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav__cta {
+    margin-top: 16px;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+}
+
+/* =============================================
+   HERO SECTION
+   ============================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 64px;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Grid lines background */
+.hero__bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(26, 115, 232, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 115, 232, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Radial glow */
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(26, 115, 232, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--accent-blue-subtle);
+  border: 1px solid rgba(26, 115, 232, 0.2);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.hero__badge .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(0, 200, 83, 0); }
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+.hero__title span {
+  background: linear-gradient(135deg, var(--accent-blue) 0%, #4da3ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0 auto 2rem;
+}
+
+/* Email form */
+.hero__form {
+  display: flex;
+  gap: 10px;
+  max-width: 460px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero__form input {
+  flex: 1;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero__form input::placeholder {
+  color: var(--text-muted);
+}
+
+.hero__form input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px var(--accent-blue-glow);
+}
+
+.hero__form button {
+  padding: 14px 28px;
+  background: var(--accent-blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.hero__form button:hover {
+  background: var(--accent-blue-hover);
+  transform: translateY(-1px);
+}
+
+.hero__form button:active {
+  transform: translateY(0);
+}
+
+/* Success state */
+.hero__form.success {
+  pointer-events: none;
+}
+
+.hero__form.success input,
+.hero__form.success button {
+  display: none;
+}
+
+.form-success {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: var(--green-dim);
+  border: 1px solid rgba(0, 200, 83, 0.25);
+  border-radius: var(--radius-md);
+  color: var(--green);
+  font-weight: 600;
+  font-size: 15px;
+  animation: slideUp 0.4s var(--ease-spring);
+}
+
+.hero__form.success .form-success {
+  display: flex;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero__trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.hero__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero__trust-item svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 540px) {
+  .hero__form {
+    flex-direction: column;
+  }
+  .hero__form button {
+    width: 100%;
+  }
+}
+
+/* =============================================
+   SECTION COMMON
+   ============================================= */
+.section {
+  padding: var(--section-pad) 0;
+}
+
+.section__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.section__label::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: var(--accent-blue);
+}
+
+.section__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.section__desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.65;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================================
+   PILLARS / WHAT YOU GET
+   ============================================= */
+.pillars {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: 2.5rem;
+}
+
+.pillar {
+  background: var(--bg-card);
+  padding: 2rem 1.75rem;
+  transition: background 0.25s ease;
+}
+
+.pillar:hover {
+  background: var(--bg-card-hover);
+}
+
+.pillar__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-blue-subtle);
+  border: 1px solid rgba(26, 115, 232, 0.15);
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  color: var(--accent-blue);
+}
+
+.pillar__title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.pillar__desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .pillars__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .pillars__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================
+   SAMPLE NEWSLETTER
+   ============================================= */
+.sample {
+  position: relative;
+}
+
+.sample__wrapper {
+  margin-top: 2.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-terminal);
+}
+
+/* Terminal chrome */
+.terminal-chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.terminal-dot--red { background: #ff5f57; }
+.terminal-dot--yellow { background: #ffbd2e; }
+.terminal-dot--green { background: #28c840; }
+
+.terminal-title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-right: 38px;
+}
+
+.terminal-body {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  font-family: var(--font-mono);
+  font-size: clamp(12px, 1.5vw, 14px);
+  line-height: 1.8;
+  color: var(--text-secondary);
+  overflow-x: auto;
+}
+
+.terminal-body .t-header {
+  font-weight: 600;
+  color: var(--accent-blue);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  display: block;
+}
+
+.terminal-body .t-header:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.terminal-body .t-line {
+  display: block;
+  padding: 2px 0;
+}
+
+.terminal-body .t-ticker {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.terminal-body .t-up {
+  color: var(--green);
+  font-weight: 500;
+}
+
+.terminal-body .t-down {
+  color: var(--red);
+  font-weight: 500;
+}
+
+.terminal-body .t-highlight {
+  color: var(--text-primary);
+}
+
+/* Date line in terminal */
+.terminal-date {
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.terminal-date .live-tag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--green);
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.terminal-date .live-tag .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* =============================================
+   PRICING
+   ============================================= */
+.pricing {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.price-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease, transform 0.25s var(--ease-out);
+}
+
+.price-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.price-card--featured {
+  border-color: var(--accent-blue);
+  position: relative;
+  box-shadow: 0 0 40px rgba(26, 115, 232, 0.1);
+}
+
+.price-card--featured:hover {
+  border-color: var(--accent-blue-hover);
+}
+
+.price-card__badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 14px;
+  background: var(--accent-blue);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.price-card__tier {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.price-card__price {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.price-card__price span {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.price-card__desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.price-card__features {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.price-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.price-card__features li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--green);
+}
+
+.price-card__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.price-card__cta--outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+.price-card__cta--outline:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.price-card__cta--primary {
+  background: var(--accent-blue);
+  color: #fff;
+}
+.price-card__cta--primary:hover {
+  background: var(--accent-blue-hover);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .pricing__grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* =============================================
+   ABOUT / CREDIBILITY
+   ============================================= */
+.about {
+  position: relative;
+}
+
+.about__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.about__text p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.stat-card__number {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.stat-card__label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .about__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================
+   FINAL CTA
+   ============================================= */
+.final-cta {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(26, 115, 232, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.final-cta .section__title {
+  max-width: 600px;
+  margin: 0 auto 0.75rem;
+}
+
+.final-cta .section__desc {
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.final-cta__form {
+  display: flex;
+  gap: 10px;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.final-cta__form input {
+  flex: 1;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.final-cta__form input::placeholder {
+  color: var(--text-muted);
+}
+
+.final-cta__form input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px var(--accent-blue-glow);
+}
+
+.final-cta__form button {
+  padding: 14px 28px;
+  background: var(--accent-blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.final-cta__form button:hover {
+  background: var(--accent-blue-hover);
+  transform: translateY(-1px);
+}
+
+.final-cta__form.success input,
+.final-cta__form.success button { display: none; }
+.final-cta__form.success .form-success { display: flex; }
+.final-cta__form.success { pointer-events: none; }
+
+@media (max-width: 540px) {
+  .final-cta__form {
+    flex-direction: column;
+  }
+  .final-cta__form button {
+    width: 100%;
+  }
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer {
+  padding: 3rem 0 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.footer__links a {
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.footer__links a:hover { color: var(--text-secondary); }
+
+.footer__disclaimer {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-align: center;
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+.footer__attribution {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.footer__attribution a {
+  color: var(--text-muted);
+}
+.footer__attribution a:hover {
+  color: var(--text-secondary);
+}
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .pulse-dot {
+    animation: none;
+  }
+}
+
+/* Ticker animation for the terminal */
+@keyframes tickerBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.cursor-blink {
+  animation: tickerBlink 1s step-end infinite;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo" aria-label="The Daily Brief">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="currentColor" fill-opacity="0.08"/>
+        <path d="M6 20 L10 16 L14 18 L18 11 L22 14 L26 8" stroke="var(--accent-blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 20 L10 16 L14 18 L18 11 L22 14 L26 8 L26 24 L6 24 Z" fill="var(--accent-blue)" fill-opacity="0.1"/>
+        <circle cx="26" cy="8" r="2.5" fill="var(--accent-blue)"/>
+      </svg>
+      The Daily Brief
+    </a>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#sample">Sample</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="icon-sun">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="icon-moon" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </li>
+      <li><a href="#hero" class="nav__cta">Subscribe Free</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero__bg"></div>
+  <div class="container hero__content">
+    <div class="hero__badge">
+      <span class="pulse-dot"></span>
+      Pre-Market Intelligence
+    </div>
+
+    <h1 class="hero__title">Your 3-Minute Edge<br><span>Before the Bell</span></h1>
+
+    <p class="hero__subtitle">Concise daily pre-market intelligence covering indices, macro events, key movers, and actionable trading themes. Delivered every morning at 6AM&nbsp;ET.</p>
+
+    <form class="hero__form" id="heroForm" onsubmit="return handleSubscribe(event, this)">
+      <input type="email" placeholder="Enter your email" required aria-label="Email address">
+      <button type="submit">Subscribe Free</button>
+      <div class="form-success">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        You're in! Check your inbox.
+      </div>
+    </form>
+
+    <div class="hero__trust">
+      <div class="hero__trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Join 10,000+ active traders
+      </div>
+      <div class="hero__trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        No spam, unsubscribe anytime
+      </div>
+      <div class="hero__trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        3-min read, every weekday
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT YOU GET ===== -->
+<section class="section pillars" id="features">
+  <div class="container">
+    <div class="reveal">
+      <div class="section__label">What You Get</div>
+      <h2 class="section__title">Six pillars of<br>pre-market intelligence</h2>
+      <p class="section__desc">Everything you need to start your trading day with confidence — delivered in a single, focused email.</p>
+    </div>
+
+    <div class="pillars__grid reveal">
+      <!-- 1 -->
+      <div class="pillar">
+        <div class="pillar__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 class="pillar__title">Market Overview</h3>
+        <p class="pillar__desc">Overnight performance of global indices and futures with risk tone assessment.</p>
+      </div>
+      <!-- 2 -->
+      <div class="pillar">
+        <div class="pillar__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 class="pillar__title">Macro Calendar</h3>
+        <p class="pillar__desc">Today's economic releases with expected values and market impact ratings.</p>
+      </div>
+      <!-- 3 -->
+      <div class="pillar">
+        <div class="pillar__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 class="pillar__title">Key Movers</h3>
+        <p class="pillar__desc">3-5 stocks and crypto with clear catalysts — earnings, M&amp;A, upgrades.</p>
+      </div>
+      <!-- 4 -->
+      <div class="pillar">
+        <div class="pillar__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 class="pillar__title">Trading Themes</h3>
+        <p class="pillar__desc">Emerging themes with representative tickers and levels to watch.</p>
+      </div>
+      <!-- 5 -->
+      <div class="pillar">
+        <div class="pillar__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3 class="pillar__title">What Changed</h3>
+        <p class="pillar__desc">Critical new information vs. yesterday's session — what moved and why.</p>
+      </div>
+      <!-- 6 -->
+      <div class="pillar">
+        <div class="pillar__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        </div>
+        <h3 class="pillar__title">TL;DR</h3>
+        <p class="pillar__desc">The entire day summarized in 3-4 sentences for the time-pressed trader.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SAMPLE NEWSLETTER ===== -->
+<section class="section sample" id="sample">
+  <div class="container">
+    <div class="reveal">
+      <div class="section__label">Sample Edition</div>
+      <h2 class="section__title">See what lands in<br>your inbox every morning</h2>
+      <p class="section__desc">Here's a real preview from today's edition — concise, data-forward, and ready in under 3 minutes.</p>
+    </div>
+
+    <div class="sample__wrapper reveal">
+      <div class="terminal-chrome">
+        <div class="terminal-dot terminal-dot--red"></div>
+        <div class="terminal-dot terminal-dot--yellow"></div>
+        <div class="terminal-dot terminal-dot--green"></div>
+        <div class="terminal-title">The Daily Brief — March 16, 2026</div>
+      </div>
+      <div class="terminal-date">
+        <span>Mon, Mar 16 2026 · 6:00 AM ET</span>
+        <span class="live-tag"><span class="pulse-dot"></span> LIVE</span>
+      </div>
+      <div class="terminal-body">
+        <span class="t-header">Market Overview</span>
+        <span class="t-line">• <span class="t-ticker">SPY</span> <span class="t-down">-0.6%</span>, <span class="t-ticker">QQQ</span> <span class="t-down">-0.6%</span>, <span class="t-ticker">DIA</span> <span class="t-down">-0.2%</span> — <span class="t-highlight">risk-off tone as Iran conflict enters week 3</span></span>
+        <span class="t-line">• Brent crude at <span class="t-highlight">$104/bbl</span> (<span class="t-up">+40%</span> since conflict began), Strait of Hormuz effectively blockaded</span>
+        <span class="t-line">• <span class="t-ticker">BTC</span> <span class="t-up">+1.2%</span> to $73,700; <span class="t-ticker">ETH</span> <span class="t-up">+4.9%</span> to $2,286 — crypto bid on geopolitical uncertainty</span>
+        <span class="t-line">• Treasury 10Y at <span class="t-highlight">4.27%</span>, curve steepening on stagflation concerns</span>
+        <span class="t-line">• <span class="t-highlight">NVIDIA GTC 2026</span> kicks off today — Jensen Huang keynote at 1PM ET</span>
+
+        <span class="t-header">Key Movers</span>
+        <span class="t-line">• <span class="t-ticker">META</span> <span class="t-down">-3.8%</span> — selling despite $27B AI infrastructure deal with Nebius</span>
+        <span class="t-line">• <span class="t-ticker">MU</span> <span class="t-up">+5.1%</span> — pre-earnings rally on strong memory demand expectations</span>
+        <span class="t-line">• <span class="t-ticker">NVDA</span> <span class="t-down">-1.6%</span> — modest dip ahead of GTC keynote, analysts broadly bullish</span>
+        <span class="t-line">• <span class="t-ticker">XOM</span> <span class="t-up">+1.7%</span> — energy sector strength as Brent holds above $100</span>
+
+        <span class="t-line" style="margin-top: 1rem; color: var(--text-dim); font-size: 11px;">▎ <span class="cursor-blink">_</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="section pricing" id="pricing">
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <div class="section__label" style="justify-content: center;">Pricing</div>
+      <h2 class="section__title" style="margin-left: auto; margin-right: auto;">Choose your edge</h2>
+      <p class="section__desc" style="margin: 0 auto;">From free daily briefs to institutional-grade intelligence — pick the tier that matches your trading style.</p>
+    </div>
+
+    <div class="pricing__grid reveal">
+      <!-- Free -->
+      <div class="price-card">
+        <div class="price-card__tier">Free</div>
+        <div class="price-card__price">$0 <span>/ month</span></div>
+        <p class="price-card__desc">The essentials to start your day informed.</p>
+        <ul class="price-card__features">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Daily market brief via email
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Market overview &amp; key movers
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Daily TL;DR summary
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Web archive access
+          </li>
+        </ul>
+        <a href="#hero" class="price-card__cta price-card__cta--outline">Start Free</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="price-card price-card--featured">
+        <div class="price-card__badge">Most Popular</div>
+        <div class="price-card__tier">Pro</div>
+        <div class="price-card__price">$29 <span>/ month</span></div>
+        <p class="price-card__desc">Full intelligence suite for serious traders.</p>
+        <ul class="price-card__features">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Everything in Free
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Intraday market alerts
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Options flow data
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Weekly deep-dive reports
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Full macro calendar &amp; themes
+          </li>
+        </ul>
+        <a href="#hero" class="price-card__cta price-card__cta--primary">Go Pro</a>
+      </div>
+
+      <!-- Institutional -->
+      <div class="price-card">
+        <div class="price-card__tier">Institutional</div>
+        <div class="price-card__price">$99 <span>/ month</span></div>
+        <p class="price-card__desc">Enterprise-grade tools for teams and desks.</p>
+        <ul class="price-card__features">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Everything in Pro
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            API access for integrations
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Custom watchlists
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Priority support
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Team seats (up to 10)
+          </li>
+        </ul>
+        <a href="mailto:hello@thedailybrief.com" class="price-card__cta price-card__cta--outline" target="_blank" rel="noopener noreferrer">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT / CREDIBILITY ===== -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="reveal">
+      <div class="section__label">About</div>
+      <h2 class="section__title">Built for traders<br>who value signal over noise</h2>
+    </div>
+
+    <div class="about__content reveal">
+      <div class="about__text">
+        <p>The Daily Brief is built by professional market analysts using institutional-grade data sources and real-time intelligence. We focus on what matters: clear, concise, actionable information for active traders who need an edge — not hype, not predictions, just data and context.</p>
+        <p>Every edition is crafted before 6AM ET, covering overnight moves, macro catalysts, key movers with clear rationale, and emerging themes. We distill the noise into signal so you can make informed decisions — fast.</p>
+      </div>
+
+      <div class="about__stats">
+        <div class="stat-card">
+          <div class="stat-card__number">10K+</div>
+          <div class="stat-card__label">Active Subscribers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number">6AM</div>
+          <div class="stat-card__label">ET Delivery Daily</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number">72%</div>
+          <div class="stat-card__label">Open Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number">&lt;3min</div>
+          <div class="stat-card__label">Average Read Time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="section final-cta" id="subscribe">
+  <div class="final-cta__bg"></div>
+  <div class="container" style="position: relative; z-index: 1;">
+    <div class="reveal" style="text-align: center;">
+      <div class="section__label" style="justify-content: center;">Get Started</div>
+      <h2 class="section__title">Start every trading day<br>with an edge</h2>
+      <p class="section__desc">Join thousands of traders who read The Daily Brief before the opening bell. Free, forever.</p>
+
+      <form class="final-cta__form" onsubmit="return handleSubscribe(event, this)">
+        <input type="email" placeholder="Enter your email" required aria-label="Email address">
+        <button type="submit">Subscribe Free</button>
+        <div class="form-success">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          You're in! Check your inbox.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <a href="#" class="nav__logo" aria-label="The Daily Brief">
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="currentColor" fill-opacity="0.08"/>
+        <path d="M6 20 L10 16 L14 18 L18 11 L22 14 L26 8" stroke="var(--accent-blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 20 L10 16 L14 18 L18 11 L22 14 L26 8 L26 24 L6 24 Z" fill="var(--accent-blue)" fill-opacity="0.1"/>
+        <circle cx="26" cy="8" r="2.5" fill="var(--accent-blue)"/>
+      </svg>
+      The Daily Brief
+    </a>
+
+    <ul class="footer__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="mailto:hello@thedailybrief.com" target="_blank" rel="noopener noreferrer">Contact</a></li>
+      <li><a href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+      <li><a href="#" target="_blank" rel="noopener noreferrer">Terms of Service</a></li>
+    </ul>
+
+    <p class="footer__disclaimer">This newsletter is for informational purposes only and does not constitute investment advice. Past performance does not guarantee future results. Always do your own research before making investment decisions.</p>
+
+    <p class="footer__attribution">
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// --- Theme Toggle ---
+const themeToggle = document.getElementById('themeToggle');
+const sunIcon = themeToggle.querySelector('.icon-sun');
+const moonIcon = themeToggle.querySelector('.icon-moon');
+
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  if (theme === 'light') {
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
+  } else {
+    sunIcon.style.display = 'block';
+    moonIcon.style.display = 'none';
+  }
+}
+
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  setTheme(current === 'light' ? 'dark' : 'light');
+});
+
+// Default to dark
+setTheme('dark');
+
+// --- Mobile Nav ---
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+
+mobileToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  const isOpen = navLinks.classList.contains('active');
+  mobileToggle.innerHTML = isOpen
+    ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
+    : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+});
+
+// Close mobile nav on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    mobileToggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+  });
+});
+
+// --- Nav scroll effect ---
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const current = window.scrollY;
+  if (current > 50) {
+    nav.classList.add('nav--scrolled');
+  } else {
+    nav.classList.remove('nav--scrolled');
+  }
+  lastScroll = current;
+}, { passive: true });
+
+// --- Scroll reveal ---
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -40px 0px'
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// --- Form submission ---
+function handleSubscribe(e, form) {
+  e.preventDefault();
+  const email = form.querySelector('input[type="email"]').value;
+  if (email) {
+    form.classList.add('success');
+  }
+  return false;
+}
+
+// --- Smooth scroll for anchor links ---
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
