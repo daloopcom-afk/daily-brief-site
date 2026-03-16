@@ -1391,7 +1391,7 @@ img { max-width: 100%; display: block; }
             Full macro calendar &amp; themes
           </li>
         </ul>
-        <a href="#hero" class="price-card__cta price-card__cta--primary">Go Pro</a>
+        <a href="https://buy.stripe.com/5kQbJ15n06RF9MscPQak001" class="price-card__cta price-card__cta--primary" target="_blank" rel="noopener noreferrer">Go Pro</a>
       </div>
 
       <!-- Institutional -->
@@ -1421,7 +1421,7 @@ img { max-width: 100%; display: block; }
             Team seats (up to 10)
           </li>
         </ul>
-        <a href="mailto:hello@thedailybrief.com" class="price-card__cta price-card__cta--outline" target="_blank" rel="noopener noreferrer">Contact Us</a>
+        <a href="https://buy.stripe.com/6oUcN58zc6RFbUA7vwak002" class="price-card__cta price-card__cta--outline" target="_blank" rel="noopener noreferrer">Go Institutional</a>
       </div>
     </div>
   </div>
@@ -1500,7 +1500,7 @@ img { max-width: 100%; display: block; }
     <ul class="footer__links">
       <li><a href="#about">About</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="mailto:hello@thedailybrief.com" target="_blank" rel="noopener noreferrer">Contact</a></li>
+      <li><a href="mailto:hello@daloop.com" target="_blank" rel="noopener noreferrer">Contact</a></li>
       <li><a href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
       <li><a href="#" target="_blank" rel="noopener noreferrer">Terms of Service</a></li>
     </ul>
@@ -1589,12 +1589,55 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
-// --- Form submission ---
-function handleSubscribe(e, form) {
+// --- Form submission (MailerLite API) ---
+const ML_API_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiYTQwOGIyNWRhZGYyZTY4NzEwNDY1ODhkNzQxYzBlYTk2YjdmMGRlMTI0MzgyNWZlN2M4YTE0MTI0NDg4Y2JiZGM0Y2I2NjE2NmI0ZmRmNmEiLCJpYXQiOjE3NzM2NjU2MTcuNjY5NDk3LCJuYmYiOjE3NzM2NjU2MTcuNjY5NSwiZXhwIjo0OTI5MzM5MjE3LjY2Mjc4Miwic3ViIjoiMzM2NzQxIiwic2NvcGVzIjpbXX0.YV4-ND_Zh9XE3YK6QwIgDVTBKYxD5vo_f6wdapImWT4uljxkIIeRVbA-YnFArsdiNeDHvcBo33c05tqHWvQJ3CyDMT-kvBdOFarZDVI2hKVK2lfTQd8GPVkKqQyFg-T9_bl4uecPvt_P6-xWl4n5BnrTyPtXNHe7IH0fBYMky6GqbTppqlRiTlbxnGnnwvtEpx0A6MGLR6WJ3ngb6NLol4hm1YUeGADp02lzvV5JEZ7tX4VcdzJjs0LeM9TTsHY-MXeLt0A-mlE_G1PhH0TDwj8vm20KyBRnzaHGAX1-vTIQszlH59j-g6MMMkLZmAuyPzleIfmvgLaT4-Vwbco1tHfxi6iBiUjZiwm5DZT0szkqVT6Rs_z0Q23kxmKKwERWIIqQjVA4hunZP2DRRxsvF3o3BTEQlsSWI5CIZtxwCt4Obt-87EbSIJyQkExov7grXrM2dNjezHCm__YBfBGFkcrgULRgW7etGglVho1Qr88HbEGkxkPnG1n_e4E_4G_6f8u9dvuXpoN2Zs4h3lBWIQDSN08hXsPDf_gUQJ-V2aXUTtmjb_LOSkzQ8K6_K2kYV8jeHOz9JGTqvgAtUf0pVNcPfqP-rallqF-bvma7ugxlQi2EC1Y0oGfmZ21Z3dQCHQRFAGXevYCm0Bu6nz698n74ph7a16TnQT1bC-ne-9I';
+const ML_GROUP_FREE = '182113382881560075';
+
+async function handleSubscribe(e, form) {
   e.preventDefault();
-  const email = form.querySelector('input[type="email"]').value;
-  if (email) {
-    form.classList.add('success');
+  const emailInput = form.querySelector('input[type="email"]');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const email = emailInput.value.trim();
+  if (!email) return false;
+
+  // Disable button and show loading state
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Subscribing...';
+  submitBtn.disabled = true;
+
+  try {
+    const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + ML_API_KEY
+      },
+      body: JSON.stringify({
+        email: email,
+        groups: [ML_GROUP_FREE],
+        status: 'active'
+      })
+    });
+
+    if (res.ok || res.status === 200 || res.status === 201) {
+      form.classList.add('success');
+      emailInput.value = '';
+    } else {
+      const data = await res.json().catch(() => ({}));
+      if (data.message && data.message.includes('already')) {
+        // Already subscribed — still show success
+        form.classList.add('success');
+        emailInput.value = '';
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    }
+  } catch (err) {
+    alert('Network error. Please try again.');
+  } finally {
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
   }
   return false;
 }
