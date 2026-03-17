@@ -20,9 +20,9 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>daloop — Pre-Market Intelligence for Active Traders</title>
+<title>Daloop — Pre-Market Intelligence for Active Traders</title>
 <meta name="description" content="Concise daily pre-market intelligence covering indices, macro events, key movers, and actionable trading themes. Delivered every morning at 6AM ET.">
-<meta property="og:title" content="daloop — Pre-Market Intelligence for Active Traders">
+<meta property="og:title" content="Daloop — Pre-Market Intelligence for Active Traders">
 <meta property="og:description" content="Your 3-minute edge before the bell. Join 10,000+ active traders getting pre-market intelligence daily.">
 <meta property="og:type" content="website">
 
@@ -35,31 +35,31 @@
    CSS CUSTOM PROPERTIES
    ============================================= */
 :root {
-  /* Core palette */
-  --bg-primary: #0a1628;
-  --bg-secondary: #0f1d32;
-  --bg-card: #131f35;
-  --bg-card-hover: #182642;
-  --bg-terminal: #0c1220;
-  --bg-surface: #111d30;
+  /* Core palette — Light theme default */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f8fa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f3f5f8;
+  --bg-terminal: #f5f7fa;
+  --bg-surface: #ffffff;
 
-  --text-primary: #e8edf5;
-  --text-secondary: #8b99b0;
-  --text-muted: #5a6a82;
-  --text-dim: #3d4f68;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --text-dim: #9ca3af;
 
-  --accent-blue: #1a73e8;
-  --accent-blue-hover: #2b82f5;
-  --accent-blue-glow: rgba(26, 115, 232, 0.15);
-  --accent-blue-subtle: rgba(26, 115, 232, 0.08);
+  --accent-blue: #2563eb;
+  --accent-blue-hover: #1d4ed8;
+  --accent-blue-glow: rgba(37, 99, 235, 0.12);
+  --accent-blue-subtle: rgba(37, 99, 235, 0.06);
 
-  --green: #00c853;
-  --green-dim: rgba(0, 200, 83, 0.15);
-  --red: #ff3d57;
-  --red-dim: rgba(255, 61, 87, 0.15);
+  --green: #16a34a;
+  --green-dim: rgba(22, 163, 74, 0.1);
+  --red: #dc2626;
+  --red-dim: rgba(220, 38, 38, 0.1);
 
-  --border: rgba(255, 255, 255, 0.06);
-  --border-hover: rgba(255, 255, 255, 0.1);
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.15);
 
   /* Typography */
   --font-heading: 'Space Grotesk', system-ui, sans-serif;
@@ -82,32 +82,32 @@
   --radius-xl: 24px;
 }
 
-/* Light mode */
-[data-theme="light"] {
-  --bg-primary: #f5f7fa;
-  --bg-secondary: #edf0f5;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f8f9fb;
-  --bg-terminal: #f0f2f6;
-  --bg-surface: #ffffff;
+/* Dark mode */
+[data-theme="dark"] {
+  --bg-primary: #0a1628;
+  --bg-secondary: #0f1d32;
+  --bg-card: #131f35;
+  --bg-card-hover: #182642;
+  --bg-terminal: #0c1220;
+  --bg-surface: #111d30;
 
-  --text-primary: #0f1d32;
-  --text-secondary: #4a5568;
-  --text-muted: #718096;
-  --text-dim: #a0aec0;
+  --text-primary: #e8edf5;
+  --text-secondary: #8b99b0;
+  --text-muted: #5a6a82;
+  --text-dim: #3d4f68;
 
-  --accent-blue: #1a63d0;
-  --accent-blue-hover: #1555b8;
-  --accent-blue-glow: rgba(26, 99, 208, 0.1);
-  --accent-blue-subtle: rgba(26, 99, 208, 0.05);
+  --accent-blue: #3b82f6;
+  --accent-blue-hover: #60a5fa;
+  --accent-blue-glow: rgba(59, 130, 246, 0.15);
+  --accent-blue-subtle: rgba(59, 130, 246, 0.08);
 
-  --green: #0b9e42;
-  --green-dim: rgba(11, 158, 66, 0.1);
-  --red: #d93025;
-  --red-dim: rgba(217, 48, 37, 0.1);
+  --green: #22c55e;
+  --green-dim: rgba(34, 197, 94, 0.15);
+  --red: #ef4444;
+  --red-dim: rgba(239, 68, 68, 0.15);
 
-  --border: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.14);
+  --border: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(255, 255, 255, 0.1);
 }
 
 /* =============================================
@@ -161,18 +161,22 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(10, 22, 40, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-[data-theme="light"] .nav {
-  background: rgba(245, 247, 250, 0.9);
+[data-theme="dark"] .nav {
+  background: rgba(10, 22, 40, 0.85);
 }
 
 .nav--scrolled {
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .nav--scrolled {
   box-shadow: 0 1px 24px rgba(0, 0, 0, 0.2);
 }
 
@@ -193,7 +197,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 18px;
-  color: var(--text-primary);
+  color: var(--accent-blue);
   text-decoration: none;
 }
 
@@ -341,7 +345,7 @@ img { max-width: 100%; display: block; }
   transform: translateX(-50%);
   width: 800px;
   height: 600px;
-  background: radial-gradient(ellipse, rgba(26, 115, 232, 0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -394,7 +398,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero__title span {
-  background: linear-gradient(135deg, var(--accent-blue) 0%, #4da3ff 100%);
+  background: linear-gradient(135deg, var(--accent-blue) 0%, #3b82f6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -420,7 +424,7 @@ img { max-width: 100%; display: block; }
   flex: 1;
   padding: 14px 18px;
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-hover);
   border-radius: var(--radius-md);
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -660,6 +664,7 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--bg-terminal);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 /* Terminal chrome */
@@ -791,18 +796,20 @@ img { max-width: 100%; display: block; }
   padding: 2rem 1.75rem;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.25s ease, transform 0.25s var(--ease-out);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.25s ease, transform 0.25s var(--ease-out), box-shadow 0.25s ease;
 }
 
 .price-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 .price-card--featured {
   border-color: var(--accent-blue);
   position: relative;
-  box-shadow: 0 0 40px rgba(26, 115, 232, 0.1);
+  box-shadow: 0 0 40px rgba(37, 99, 235, 0.1);
 }
 
 .price-card--featured:hover {
@@ -955,6 +962,7 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius-md);
   padding: 1.5rem;
   text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .stat-card__number {
@@ -1013,7 +1021,7 @@ img { max-width: 100%; display: block; }
   flex: 1;
   padding: 14px 18px;
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-hover);
   border-radius: var(--radius-md);
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -1144,14 +1152,14 @@ img { max-width: 100%; display: block; }
 <!-- ===== NAVIGATION ===== -->
 <nav class="nav" id="nav">
   <div class="nav__inner">
-    <a href="#" class="nav__logo" aria-label="daloop">
+    <a href="#" class="nav__logo" aria-label="Daloop">
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <rect width="32" height="32" rx="8" fill="currentColor" fill-opacity="0.08"/>
         <path d="M6 20 L10 16 L14 18 L18 11 L22 14 L26 8" stroke="var(--accent-blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M6 20 L10 16 L14 18 L18 11 L22 14 L26 8 L26 24 L6 24 Z" fill="var(--accent-blue)" fill-opacity="0.1"/>
         <circle cx="26" cy="8" r="2.5" fill="var(--accent-blue)"/>
       </svg>
-      daloop
+      Daloop
     </a>
 
     <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
@@ -1301,7 +1309,7 @@ img { max-width: 100%; display: block; }
         <div class="terminal-dot terminal-dot--red"></div>
         <div class="terminal-dot terminal-dot--yellow"></div>
         <div class="terminal-dot terminal-dot--green"></div>
-        <div class="terminal-title">daloop — March 16, 2026</div>
+        <div class="terminal-title">Daloop — March 16, 2026</div>
       </div>
       <div class="terminal-date">
         <span>Mon, Mar 16 2026 · 6:00 AM ET</span>
@@ -1437,7 +1445,7 @@ img { max-width: 100%; display: block; }
 
     <div class="about__content reveal">
       <div class="about__text">
-        <p>daloop is built by professional market analysts using institutional-grade data sources and real-time intelligence. We focus on what matters: clear, concise, actionable information for active traders who need an edge — not hype, not predictions, just data and context.</p>
+        <p>Daloop is built by professional market analysts using institutional-grade data sources and real-time intelligence. We focus on what matters: clear, concise, actionable information for active traders who need an edge — not hype, not predictions, just data and context.</p>
         <p>Every edition is crafted before 6AM ET, covering overnight moves, macro catalysts, key movers with clear rationale, and emerging themes. We distill the noise into signal so you can make informed decisions — fast.</p>
       </div>
 
@@ -1470,7 +1478,7 @@ img { max-width: 100%; display: block; }
     <div class="reveal" style="text-align: center;">
       <div class="section__label" style="justify-content: center;">Get Started</div>
       <h2 class="section__title">Start every trading day<br>with an edge</h2>
-      <p class="section__desc">Join thousands of traders who read daloop before the opening bell. Free, forever.</p>
+      <p class="section__desc">Join thousands of traders who read Daloop before the opening bell. Free, forever.</p>
 
       <form class="final-cta__form" onsubmit="return handleSubscribe(event, this)">
         <input type="email" placeholder="Enter your email" required aria-label="Email address">
@@ -1487,14 +1495,14 @@ img { max-width: 100%; display: block; }
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="container footer__inner">
-    <a href="#" class="nav__logo" aria-label="daloop">
+    <a href="#" class="nav__logo" aria-label="Daloop">
       <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <rect width="32" height="32" rx="8" fill="currentColor" fill-opacity="0.08"/>
         <path d="M6 20 L10 16 L14 18 L18 11 L22 14 L26 8" stroke="var(--accent-blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M6 20 L10 16 L14 18 L18 11 L22 14 L26 8 L26 24 L6 24 Z" fill="var(--accent-blue)" fill-opacity="0.1"/>
         <circle cx="26" cy="8" r="2.5" fill="var(--accent-blue)"/>
       </svg>
-      daloop
+      Daloop
     </a>
 
     <ul class="footer__links">
@@ -1520,22 +1528,23 @@ const moonIcon = themeToggle.querySelector('.icon-moon');
 
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
-  if (theme === 'light') {
-    sunIcon.style.display = 'none';
-    moonIcon.style.display = 'block';
-  } else {
+  if (theme === 'dark') {
     sunIcon.style.display = 'block';
     moonIcon.style.display = 'none';
+  } else {
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
   }
 }
 
 themeToggle.addEventListener('click', () => {
   const current = document.documentElement.getAttribute('data-theme');
-  setTheme(current === 'light' ? 'dark' : 'light');
+  const next = current === 'dark' ? 'light' : 'dark';
+  setTheme(next);
 });
 
-// Default to dark
-setTheme('dark');
+// Default to light
+setTheme('light');
 
 // --- Mobile Nav ---
 const mobileToggle = document.getElementById('mobileToggle');
