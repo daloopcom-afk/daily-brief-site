@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<title>Daloop Closing Bell – March 18, 2026 — Daloop</title>
+<meta name="description" content="Daloop Closing Bell – March 18, 2026">
+<meta property="og:title" content="Daloop Closing Bell – March 18, 2026 — Daloop">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f8fa;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --accent-blue: #2563eb;
+  --accent-blue-hover: #1d4ed8;
+  --green: #16a34a;
+  --green-dim: rgba(22, 163, 74, 0.1);
+  --red: #dc2626;
+  --red-dim: rgba(220, 38, 38, 0.1);
+  --border: rgba(0, 0, 0, 0.08);
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0a1628;
+  --bg-secondary: #0f1d32;
+  --text-primary: #e8edf5;
+  --text-secondary: #8b99b0;
+  --text-muted: #5a6a82;
+  --accent-blue: #3b82f6;
+  --accent-blue-hover: #60a5fa;
+  --green: #22c55e;
+  --green-dim: rgba(34, 197, 94, 0.15);
+  --red: #ef4444;
+  --red-dim: rgba(239, 68, 68, 0.15);
+  --border: rgba(255, 255, 255, 0.06);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 16px; }
+a { color: var(--accent-blue); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--accent-blue-hover); }
+
+/* Nav */
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+[data-theme="dark"] .nav { background: rgba(10,22,40,0.88); }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 clamp(1rem,4vw,2rem); }
+.nav__logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-weight: 700; font-size: 18px; color: var(--accent-blue); text-decoration: none; }
+.nav__logo svg { flex-shrink: 0; }
+.nav__links { display: flex; align-items: center; gap: 24px; list-style: none; }
+.nav__links a { font-size: 14px; font-weight: 500; color: var(--text-secondary); }
+.nav__links a:hover { color: var(--text-primary); }
+.nav__cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent-blue); color: #fff !important; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; transition: background 0.2s; }
+.nav__cta:hover { background: var(--accent-blue-hover); }
+
+/* Theme toggle */
+.theme-toggle { background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 8px; cursor: pointer; color: var(--text-secondary); display: flex; align-items: center; }
+
+/* Post */
+.post { max-width: 720px; margin: 0 auto; padding: 48px clamp(1rem,4vw,2rem) 80px; }
+.post__back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); margin-bottom: 32px; }
+.post__back:hover { color: var(--accent-blue); }
+.post__category { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #dc2626; background: #dc262611; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+.post__title { font-family: var(--font-heading); font-size: clamp(28px, 5vw, 38px); font-weight: 700; color: var(--text-primary); line-height: 1.2; margin-bottom: 12px; }
+.post__date { font-size: 14px; color: var(--text-muted); margin-bottom: 36px; }
+.post__content { font-size: 16px; line-height: 1.75; color: var(--text-secondary); }
+.post__section-heading { font-family: var(--font-heading); font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent-blue); margin: 36px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--bg-secondary); }
+.post__sub-heading { font-size: 15px; font-weight: 600; color: var(--text-primary); margin: 20px 0 8px; }
+.post__content p { margin: 12px 0; }
+.post__list { margin: 8px 0 8px 0; padding: 0; list-style: none; }
+.post__list li { position: relative; padding: 8px 0 8px 20px; border-bottom: 1px solid var(--bg-secondary); }
+.post__list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; background: var(--accent-blue); border-radius: 50%; }
+.post__list li:last-child { border-bottom: none; }
+.post__content strong { color: var(--text-primary); font-weight: 600; }
+.post__content code { background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+.pct-green { display: inline-block; background: var(--green-dim); color: var(--green); padding: 1px 8px; border-radius: 4px; font-weight: 600; font-size: 14px; }
+.pct-red { display: inline-block; background: var(--red-dim); color: var(--red); padding: 1px 8px; border-radius: 4px; font-weight: 600; font-size: 14px; }
+
+/* CTA */
+.post__cta { margin-top: 48px; padding: 32px; background: var(--bg-secondary); border-radius: var(--radius-md); text-align: center; }
+.post__cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+.post__cta a { display: inline-flex; padding: 10px 24px; background: var(--accent-blue); color: #fff !important; border-radius: var(--radius-sm); font-weight: 600; font-size: 14px; }
+
+/* Footer */
+.footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+.footer p { font-size: 13px; color: var(--text-muted); }
+
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .post__title { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <svg width="32" height="32" viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="22" fill="none" stroke="var(--accent-blue)" stroke-width="4.5"/>
+        <polyline points="16,42 23,33 30,37 40,23" fill="none" stroke="var(--accent-blue)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="23" r="2.5" fill="var(--accent-blue)"/>
+      </svg>
+      Daloop
+    </a>
+    <ul class="nav__links">
+      <li><a href="/blog/">Archive</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="icon-sun">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </li>
+      <li><a href="/" class="nav__cta">Subscribe Free</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Post -->
+<article class="post">
+  <a href="/blog/" class="post__back">&larr; All Posts</a>
+  <div class="post__category">Closing Bell</div>
+  <h1 class="post__title">Daloop Closing Bell – March 18, 2026</h1>
+  <div class="post__date">March 18, 2026</div>
+  <div class="post__content">
+<h2 class="post__section-heading">CLOSING BELL – March 18, 2026</h2>
+<h3 class="post__sub-heading">FINAL SCORES</h3>
+<ul class="post__list">
+<li><strong>SPY</strong> fell <strong>1.37%</strong> to <strong>661.60</strong> (range <strong>661.27–669.72</strong>) as sellers controlled the tape into the close.</li>
+<li><strong>QQQ</strong> dropped <strong>1.39%</strong> to <strong>594.90</strong> (range <strong>594.56–603.15</strong>) with growth unable to reclaim the morning highs.</li>
+<li><strong>DIA</strong> slid <strong>1.65%</strong> to <strong>463.13</strong> (range <strong>462.76–472.36</strong>) as cyclicals weighed on the Dow.</li>
+<li><strong>IWM</strong> lost <strong>1.61%</strong> to <strong>246.02</strong> (range <strong>245.88–249.23</strong>) as small caps stayed under pressure.</li>
+<li>Volatility jumped: the <strong>VIX</strong> rose to <strong>24.65</strong> (<span class="pct-green">+10.19%</span>), a reminder that hedging demand is back.</li>
+</ul>
+<h3 class="post__sub-heading">SESSION NARRATIVE</h3>
+<p>Stocks sold off Wednesday as a one-two punch of hotter inflation data and a firmer Fed message tightened financial conditions. February Producer Price Index surprised to the upside, reinforcing the market’s fear that inflation isn’t cooling fast enough for the Fed to begin easing soon.</p>
+<p>The Fed held rates steady at <strong>3.5%–3.75%</strong>, and Chair Powell’s tone did not help risk appetite. Traders parsed the updated projections for confirmation that the bar for cuts remains high, and Powell’s comments about the need for “more progress” on inflation accelerated the afternoon slide.</p>
+<p>Energy was the other macro overhang. Crude spiked again on escalating Middle East conflict headlines, keeping the inflation narrative in play and pressuring longer-term rates. The 10-year yield ended higher on the day, consistent with the market’s “higher for longer” repricing.</p>
+<h3 class="post__sub-heading">TOP MOVERS AT THE CLOSE</h3>
+<ul class="post__list">
+<li><strong>NFE</strong> sank about <strong>20%</strong> after another rough session for the name, extending a sharp drawdown.</li>
+<li><strong>DVLT</strong> surged nearly <strong>20%</strong> as speculative small-cap momentum remained active despite broader risk-off tone.</li>
+<li><strong>TLYS</strong> gained more than <strong>23%</strong>, outperforming on company-specific strength.</li>
+<li><strong>GSIT</strong> fell about <strong>30%</strong>, one of the day’s steepest decliners.</li>
+<li><strong>SWMR</strong> jumped more than <strong>77%</strong> in a high-volatility move typical of thin-float names.</li>
+</ul>
+<h3 class="post__sub-heading">SECTOR PERFORMANCE</h3>
+<ul class="post__list">
+<li>Defensives did not provide much shelter: <strong>XLV</strong> led the downside (<span class="pct-red">-1.67%</span>) while <strong>XLF</strong> (<span class="pct-red">-1.19%</span>) and <strong>XLK</strong> (<span class="pct-red">-1.13%</span>) also struggled.</li>
+<li>Industrials were relatively resilient (<strong>XLI</strong> <span class="pct-red">-0.79%</span>).</li>
+<li>Energy was steadier than the broader tape (<strong>XLE</strong> <span class="pct-red">-0.14%</span>) even as crude climbed.</li>
+</ul>
+<h3 class="post__sub-heading">AFTER-HOURS WATCH</h3>
+<p>Crypto mirrored the risk-off mood: <strong>Bitcoin</strong> fell about <strong>4.1%</strong> and <strong>Ethereum</strong> dropped about <strong>6.2%</strong>. With volatility rising across assets, the market is sensitive to any incremental hawkishness and to any new developments in energy markets.</p>
+<p>Earnings season remains a near-term catalyst, with investors closely watching results from bellwethers tied to AI and consumer demand for clues on whether margin pressure from higher input costs is starting to show up in guidance.</p>
+<h3 class="post__sub-heading">TOMORROW’S SETUP</h3>
+<ul class="post__list">
+<li>Key watch items: follow-through in rates (especially if yields continue grinding higher), crude’s next move, and whether volatility cools or stays elevated.</li>
+<li>If the dollar stays firm and oil remains bid, expect the market to keep testing downside levels until there’s clearer evidence inflation is bending lower.</li>
+</ul>
+  </div>
+  <div class="post__cta">
+    <p>Get this delivered to your inbox every morning at 6AM ET.</p>
+    <a href="/">Subscribe Free</a>
+  </div>
+</article>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Daloop. For informational purposes only.</p>
+</footer>
+
+<script>
+// Theme toggle
+const toggle = document.getElementById('themeToggle');
+const saved = localStorage.getItem('daloop-theme');
+if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+toggle?.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  localStorage.setItem('daloop-theme', isDark ? 'light' : 'dark');
+});
+</script>
+</body>
+</html>
