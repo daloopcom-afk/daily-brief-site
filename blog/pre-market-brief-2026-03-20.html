@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<title>Daloop Pre-Market Brief – March 20, 2026 — Daloop</title>
+<meta name="description" content="Daloop Pre-Market Brief – March 20, 2026">
+<meta property="og:title" content="Daloop Pre-Market Brief – March 20, 2026 — Daloop">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f8fa;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --accent-blue: #2563eb;
+  --accent-blue-hover: #1d4ed8;
+  --green: #16a34a;
+  --green-dim: rgba(22, 163, 74, 0.1);
+  --red: #dc2626;
+  --red-dim: rgba(220, 38, 38, 0.1);
+  --border: rgba(0, 0, 0, 0.08);
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0a1628;
+  --bg-secondary: #0f1d32;
+  --text-primary: #e8edf5;
+  --text-secondary: #8b99b0;
+  --text-muted: #5a6a82;
+  --accent-blue: #3b82f6;
+  --accent-blue-hover: #60a5fa;
+  --green: #22c55e;
+  --green-dim: rgba(34, 197, 94, 0.15);
+  --red: #ef4444;
+  --red-dim: rgba(239, 68, 68, 0.15);
+  --border: rgba(255, 255, 255, 0.06);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 16px; }
+a { color: var(--accent-blue); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--accent-blue-hover); }
+
+/* Nav */
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+[data-theme="dark"] .nav { background: rgba(10,22,40,0.88); }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 clamp(1rem,4vw,2rem); }
+.nav__logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-weight: 700; font-size: 18px; color: var(--accent-blue); text-decoration: none; }
+.nav__logo svg { flex-shrink: 0; }
+.nav__links { display: flex; align-items: center; gap: 24px; list-style: none; }
+.nav__links a { font-size: 14px; font-weight: 500; color: var(--text-secondary); }
+.nav__links a:hover { color: var(--text-primary); }
+.nav__cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent-blue); color: #fff !important; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; transition: background 0.2s; }
+.nav__cta:hover { background: var(--accent-blue-hover); }
+
+/* Theme toggle */
+.theme-toggle { background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 8px; cursor: pointer; color: var(--text-secondary); display: flex; align-items: center; }
+
+/* Post */
+.post { max-width: 720px; margin: 0 auto; padding: 48px clamp(1rem,4vw,2rem) 80px; }
+.post__back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); margin-bottom: 32px; }
+.post__back:hover { color: var(--accent-blue); }
+.post__category { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #2563eb; background: #2563eb11; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+.post__title { font-family: var(--font-heading); font-size: clamp(28px, 5vw, 38px); font-weight: 700; color: var(--text-primary); line-height: 1.2; margin-bottom: 12px; }
+.post__date { font-size: 14px; color: var(--text-muted); margin-bottom: 36px; }
+.post__content { font-size: 16px; line-height: 1.75; color: var(--text-secondary); }
+.post__section-heading { font-family: var(--font-heading); font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent-blue); margin: 36px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--bg-secondary); }
+.post__sub-heading { font-size: 15px; font-weight: 600; color: var(--text-primary); margin: 20px 0 8px; }
+.post__content p { margin: 12px 0; }
+.post__list { margin: 8px 0 8px 0; padding: 0; list-style: none; }
+.post__list li { position: relative; padding: 8px 0 8px 20px; border-bottom: 1px solid var(--bg-secondary); }
+.post__list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; background: var(--accent-blue); border-radius: 50%; }
+.post__list li:last-child { border-bottom: none; }
+.post__content strong { color: var(--text-primary); font-weight: 600; }
+.post__content code { background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+.pct-green { display: inline-block; background: var(--green-dim); color: var(--green); padding: 1px 8px; border-radius: 4px; font-weight: 600; font-size: 14px; }
+.pct-red { display: inline-block; background: var(--red-dim); color: var(--red); padding: 1px 8px; border-radius: 4px; font-weight: 600; font-size: 14px; }
+
+/* CTA */
+.post__cta { margin-top: 48px; padding: 32px; background: var(--bg-secondary); border-radius: var(--radius-md); text-align: center; }
+.post__cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+.post__cta a { display: inline-flex; padding: 10px 24px; background: var(--accent-blue); color: #fff !important; border-radius: var(--radius-sm); font-weight: 600; font-size: 14px; }
+
+/* Footer */
+.footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+.footer p { font-size: 13px; color: var(--text-muted); }
+
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .post__title { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <svg width="32" height="32" viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="22" fill="none" stroke="var(--accent-blue)" stroke-width="4.5"/>
+        <polyline points="16,42 23,33 30,37 40,23" fill="none" stroke="var(--accent-blue)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="23" r="2.5" fill="var(--accent-blue)"/>
+      </svg>
+      Daloop
+    </a>
+    <ul class="nav__links">
+      <li><a href="/blog/">Archive</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="icon-sun">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </li>
+      <li><a href="/" class="nav__cta">Subscribe Free</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Post -->
+<article class="post">
+  <a href="/blog/" class="post__back">&larr; All Posts</a>
+  <div class="post__category">Pre-Market Brief</div>
+  <h1 class="post__title">Daloop Pre-Market Brief – March 20, 2026</h1>
+  <div class="post__date">March 20, 2026</div>
+  <div class="post__content">
+<h2 class="post__section-heading">MARKET OVERVIEW</h2>
+<ul class="post__list">
+<li>US index ETFs are slightly lower pre-market: <strong>SPY <span class="pct-red">-0.25%</span></strong>, <strong>QQQ <span class="pct-red">-0.32%</span></strong>, <strong>DIA <span class="pct-red">-0.42%</span></strong>, while small caps are firmer (<strong>IWM <span class="pct-green">+0.65%</span></strong>).</li>
+<li>Risk tone is mixed: macro-sensitive cyclicals are not collapsing, but mega-cap tech is dragging the tape.</li>
+<li>Rates are nudging higher in the belly: <strong>5Y ~3.92%</strong>, <strong>10Y ~4.28%</strong>, while the long end is slightly lower (<strong>30Y ~4.85%</strong>).</li>
+<li>Commodities are the weak spot: <strong>USO <span class="pct-red">-3.54%</span></strong> and <strong>GLD <span class="pct-red">-4.12%</span></strong> point to a broad de-risking / positioning reset in hard assets.</li>
+<li>Crypto is holding up better than equities: <strong>BTC <span class="pct-green">+0.92%</span></strong> and <strong>ETH ~flat</strong>.</li>
+<li>Single-name pressure is concentrated in high-beta / AI-adjacent leadership (e.g., <strong>TSLA</strong>, <strong>MU</strong>, <strong>META</strong>, <strong>NVDA</strong>).</li>
+</ul>
+<h2 class="post__section-heading">TODAY'S MACRO & EVENTS</h2>
+<ul class="post__list">
+<li><strong>10:00am ET: Employer Costs for Employee Compensation (Dec 2025)</strong> — wage/benefits inflation signal that can feed into the rates path and the market’s tolerance for higher-for-longer.</li>
+</ul>
+<h2 class="post__section-heading">KEY STOCK / CRYPTO MOVERS</h2>
+<ul class="post__list">
+<li><strong>MU <span class="pct-red">-3.78%</span> (pre-market)</strong>: Pullback after a strong run despite a headline beat; the move reads like positioning/profit-taking and sensitivity to incremental capex / supply commentary.</li>
+<li><strong>TSLA <span class="pct-red">-3.18%</span> (pre-market)</strong>: High-beta downside continues; watch for any headlines on deliveries, pricing, or regulatory/autonomy developments as the stock remains a macro + sentiment barometer.</li>
+<li><strong>META <span class="pct-red">-1.46%</span> (pre-market)</strong>: Large-cap weakness adds pressure to QQQ; flows matter here given how crowded mega-cap exposure remains.</li>
+<li><strong>GLD <span class="pct-red">-4.12%</span> (pre-market)</strong>: Sharp move lower implies fast deleveraging in metals/miners complex; watch correlated pressure in gold equities.</li>
+<li><strong>BTC <span class="pct-green">+0.92%</span> (spot)</strong>: Relative strength versus equities; watch if it stays bid even as rate-sensitive assets wobble.</li>
+</ul>
+<h2 class="post__section-heading">THEMES & WATCHLIST IDEAS</h2>
+<ul class="post__list">
+<li><strong>AI compute & semis</strong>: <strong>NVDA, MU, MSFT, AMZN</strong> — watch whether “good news gets sold” continues; MU/NVDA price action can spill into the broader complex.</li>
+<li><strong>Energy / geopolitics premium</strong>: <strong>XOM, CVX, USO</strong> — oil is weak pre-market; watch if headlines reprice supply risk back in quickly.</li>
+<li><strong>Mega-cap tech beta</strong>: <strong>AAPL, GOOGL, META, MSFT</strong> — if these keep leaking, index-level rebounds will be harder to sustain.</li>
+<li><strong>Small-cap resilience</strong>: <strong>IWM</strong> (and high-volume small-cap ETFs) — if IWM keeps outperforming while QQQ fades, it’s a notable rotation signal.</li>
+</ul>
+<h2 class="post__section-heading">WHAT CHANGED SINCE YESTERDAY</h2>
+<ul class="post__list">
+<li>Commodities are seeing outsized downside relative to equity indices (oil and gold are leading the weakness).</li>
+<li>Small caps are showing relative strength versus large-cap tech pre-market.</li>
+<li>Treasuries are mixed with a modest uptick in intermediate yields.</li>
+<li>AI-linked leaders are seeing morning profit-taking / de-risking pressure.</li>
+</ul>
+<h2 class="post__section-heading">ONE-PARAGRAPH TL;DR</h2>
+<p>Pre-market is choppy and slightly risk-off at the index level, with <strong>SPY/QQQ/DIA</strong> modestly lower but <strong>IWM</strong> holding up. The rates backdrop is mixed, with intermediate yields edging higher, while commodities are the standout weak spot (oil and gold are both down sharply). Single-name pressure is concentrated in high-beta leadership, including <strong>MU</strong>, <strong>TSLA</strong>, and <strong>META</strong>, while crypto is relatively resilient. The key macro item today is the <strong>10:00am ET</strong> employment cost release, which will be watched as a wage-inflation input into the rates narrative.</p>
+  </div>
+  <div class="post__cta">
+    <p>Get this delivered to your inbox every morning at 6AM ET.</p>
+    <a href="/">Subscribe Free</a>
+  </div>
+</article>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Daloop. For informational purposes only.</p>
+</footer>
+
+<script>
+// Theme toggle
+const toggle = document.getElementById('themeToggle');
+const saved = localStorage.getItem('daloop-theme');
+if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+toggle?.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  localStorage.setItem('daloop-theme', isDark ? 'light' : 'dark');
+});
+</script>
+</body>
+</html>
