@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<title>Daloop Pre-Market Brief – March 25, 2026 — Daloop</title>
+<meta name="description" content="Daloop Pre-Market Brief – March 25, 2026">
+<meta property="og:title" content="Daloop Pre-Market Brief – March 25, 2026 — Daloop">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f8fa;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --accent-blue: #2563eb;
+  --accent-blue-hover: #1d4ed8;
+  --green: #16a34a;
+  --green-dim: rgba(22, 163, 74, 0.1);
+  --red: #dc2626;
+  --red-dim: rgba(220, 38, 38, 0.1);
+  --border: rgba(0, 0, 0, 0.08);
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0a1628;
+  --bg-secondary: #0f1d32;
+  --text-primary: #e8edf5;
+  --text-secondary: #8b99b0;
+  --text-muted: #5a6a82;
+  --accent-blue: #3b82f6;
+  --accent-blue-hover: #60a5fa;
+  --green: #22c55e;
+  --green-dim: rgba(34, 197, 94, 0.15);
+  --red: #ef4444;
+  --red-dim: rgba(239, 68, 68, 0.15);
+  --border: rgba(255, 255, 255, 0.06);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 16px; }
+a { color: var(--accent-blue); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--accent-blue-hover); }
+
+/* Nav */
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+[data-theme="dark"] .nav { background: rgba(10,22,40,0.88); }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 clamp(1rem,4vw,2rem); }
+.nav__logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-weight: 700; font-size: 18px; color: var(--accent-blue); text-decoration: none; }
+.nav__logo svg { flex-shrink: 0; }
+.nav__links { display: flex; align-items: center; gap: 24px; list-style: none; }
+.nav__links a { font-size: 14px; font-weight: 500; color: var(--text-secondary); }
+.nav__links a:hover { color: var(--text-primary); }
+.nav__cta { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--accent-blue); color: #fff !important; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; transition: background 0.2s; }
+.nav__cta:hover { background: var(--accent-blue-hover); }
+
+/* Theme toggle */
+.theme-toggle { background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 8px; cursor: pointer; color: var(--text-secondary); display: flex; align-items: center; }
+
+/* Post */
+.post { max-width: 720px; margin: 0 auto; padding: 48px clamp(1rem,4vw,2rem) 80px; }
+.post__back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); margin-bottom: 32px; }
+.post__back:hover { color: var(--accent-blue); }
+.post__category { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #2563eb; background: #2563eb11; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+.post__title { font-family: var(--font-heading); font-size: clamp(28px, 5vw, 38px); font-weight: 700; color: var(--text-primary); line-height: 1.2; margin-bottom: 12px; }
+.post__date { font-size: 14px; color: var(--text-muted); margin-bottom: 36px; }
+.post__content { font-size: 16px; line-height: 1.75; color: var(--text-secondary); }
+.post__section-heading { font-family: var(--font-heading); font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent-blue); margin: 36px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--bg-secondary); }
+.post__sub-heading { font-size: 15px; font-weight: 600; color: var(--text-primary); margin: 20px 0 8px; }
+.post__content p { margin: 12px 0; }
+.post__list { margin: 8px 0 8px 0; padding: 0; list-style: none; }
+.post__list li { position: relative; padding: 8px 0 8px 20px; border-bottom: 1px solid var(--bg-secondary); }
+.post__list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; background: var(--accent-blue); border-radius: 50%; }
+.post__list li:last-child { border-bottom: none; }
+.post__content strong { color: var(--text-primary); font-weight: 600; }
+.post__content code { background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+.pct-green { display: inline-block; background: var(--green-dim); color: var(--green); padding: 1px 8px; border-radius: 4px; font-weight: 600; font-size: 14px; }
+.pct-red { display: inline-block; background: var(--red-dim); color: var(--red); padding: 1px 8px; border-radius: 4px; font-weight: 600; font-size: 14px; }
+
+/* CTA */
+.post__cta { margin-top: 48px; padding: 32px; background: var(--bg-secondary); border-radius: var(--radius-md); text-align: center; }
+.post__cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+.post__cta a { display: inline-flex; padding: 10px 24px; background: var(--accent-blue); color: #fff !important; border-radius: var(--radius-sm); font-weight: 600; font-size: 14px; }
+
+/* Footer */
+.footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+.footer p { font-size: 13px; color: var(--text-muted); }
+
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .post__title { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <svg width="32" height="32" viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="22" fill="none" stroke="var(--accent-blue)" stroke-width="4.5"/>
+        <polyline points="16,42 23,33 30,37 40,23" fill="none" stroke="var(--accent-blue)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="23" r="2.5" fill="var(--accent-blue)"/>
+      </svg>
+      Daloop
+    </a>
+    <ul class="nav__links">
+      <li><a href="/blog/">Archive</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="icon-sun">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </li>
+      <li><a href="/" class="nav__cta">Subscribe Free</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Post -->
+<article class="post">
+  <a href="/blog/" class="post__back">&larr; All Posts</a>
+  <div class="post__category">Pre-Market Brief</div>
+  <h1 class="post__title">Daloop Pre-Market Brief – March 25, 2026</h1>
+  <div class="post__date">March 25, 2026</div>
+  <div class="post__content">
+<h2 class="post__section-heading">MARKET OVERVIEW</h2>
+<ul class="post__list">
+<li>US equity futures are slightly lower ahead of the open after Tuesday’s broad-based rally; <strong>SPY <span class="pct-red">-0.34%</span></strong>, <strong>QQQ <span class="pct-red">-0.68%</span></strong>, <strong>DIA <span class="pct-red">-0.17%</span></strong>, while small caps are firmer (<strong>IWM <span class="pct-green">+0.54%</span></strong>).</li>
+<li>Rate backdrop is modestly tighter versus yesterday’s close: <strong>5Y 4.03% (+8 bps)</strong>, <strong>10Y 4.39% (+6 bps)</strong>, <strong>30Y 4.94% (+3 bps)</strong>.</li>
+<li>Crypto is mixed/quiet: <strong>BTC ~71.3k (<span class="pct-red">-0.01%</span>)</strong>, <strong>ETH ~2.18k (<span class="pct-green">+0.86%</span>)</strong>.</li>
+<li>Commodities: <strong>oil is higher</strong> pre-market (energy complex bid) while <strong>gold is flat</strong> (GLD roughly unchanged).</li>
+<li>Mega-cap tape is soft in pre-market: <strong>GOOGL <span class="pct-red">-3.89%</span></strong>, <strong>MSFT <span class="pct-red">-2.73%</span></strong>, <strong>META <span class="pct-red">-1.90%</span></strong>, <strong>AMZN <span class="pct-red">-1.43%</span></strong>, <strong>NVDA <span class="pct-red">-0.27%</span></strong>.</li>
+<li>Energy is the bright spot pre-market: <strong>XOM <span class="pct-green">+2.59%</span></strong>, <strong>CVX <span class="pct-green">+0.77%</span></strong>.</li>
+<li>Risk tone: <strong>mixed to slightly risk-off</strong> (mega-cap weakness + higher yields), with an energy bid keeping cyclicals supported.</li>
+</ul>
+<h2 class="post__section-heading">TODAY'S MACRO & EVENTS</h2>
+<ul class="post__list">
+<li><strong>8:30am ET – Import/Export Prices (Feb):</strong> A direct read on pipeline inflation and how much the energy move is feeding into goods prices.</li>
+<li><strong>10:00am ET – MBA Mortgage Applications / Rates:</strong> A weekly pulse on housing demand sensitivity to rates.</li>
+<li><strong>8:30am ET – Current Account:</strong> Helps frame external financing needs and USD balance-of-payments dynamics.</li>
+<li><strong>4:10pm ET – Fed Gov. Miran (Digital Asset Summit):</strong> Any incremental signal on financial conditions, balance sheet themes, or risk sentiment can move rates and the dollar late-day.</li>
+</ul>
+<h2 class="post__section-heading">KEY STOCK / CRYPTO MOVERS</h2>
+<ul class="post__list">
+<li><strong>GOOGL <span class="pct-red">-3.89%</span> (pre):</strong> Weakness is weighing on the broader mega-cap complex into the open.</li>
+<li><strong>MSFT <span class="pct-red">-2.73%</span> (pre):</strong> Following the same tape as large-cap tech; watch whether the selling stays concentrated in megas vs broadens to semis/software.</li>
+<li><strong>XOM <span class="pct-green">+2.59%</span> (pre):</strong> Energy bid continues as crude rebounds; energy leadership is becoming the key offset to tech softness.</li>
+<li><strong>ETH <span class="pct-green">+0.86%</span> (24h):</strong> Crypto is holding up better than equities; watch if it decouples further if rates stay firm.</li>
+<li><strong>PAYX (earnings before open):</strong> Payroll/SMB demand read-through; listen for commentary on client retention, hiring, and wage pressure.</li>
+</ul>
+<h2 class="post__section-heading">THEMES & WATCHLIST IDEAS</h2>
+<ul class="post__list">
+<li><strong>Higher-for-longer rates / duration pressure:</strong> MSFT, META, AMZN, QQQ. Watch whether yields keep grinding higher into 8:30am and whether growth underperforms again.</li>
+<li><strong>Energy rebound / geopolitical premium:</strong> XOM, CVX, USO. Watch for follow-through if crude extends yesterday’s rebound.</li>
+<li><strong>Small-cap relative strength:</strong> IWM, regional banks, cyclicals. If megas stay heavy but small caps hold, it’s a “rotation tape,” not a broad risk-off.</li>
+<li><strong>China consumer / cross-border e-commerce earnings read-through:</strong> PDD (earnings). Watch for demand/margin commentary that hits broader China ADR sentiment.</li>
+</ul>
+<h2 class="post__section-heading">WHAT CHANGED SINCE YESTERDAY</h2>
+<ul class="post__list">
+<li>The pre-market <strong>leadership flipped toward energy</strong> while <strong>mega-cap tech is weaker</strong>, creating a more rotational (less index-level) tape.</li>
+<li><strong>Treasury yields moved higher</strong> (5Y/10Y/30Y all up), tightening financial conditions at the margin.</li>
+<li>The market mood is <strong>more uncertain</strong> heading into today’s data and event slate.</li>
+</ul>
+<h2 class="post__section-heading">ONE-PARAGRAPH TL;DR</h2>
+<p>Futures are modestly lower with a rotational feel: mega-cap tech is soft while energy is bid as crude rebounds. Yields are higher across the curve, keeping duration-sensitive growth under pressure. Today’s focus is on the 8:30am ET inflation-related prints (import/export prices), mortgage applications, and a late-day Fed event that could nudge rates sentiment. Crypto is steady-to-firmer, and small caps are showing relative resilience.</p>
+  </div>
+  <div class="post__cta">
+    <p>Get this delivered to your inbox every morning at 6AM ET.</p>
+    <a href="/">Subscribe Free</a>
+  </div>
+</article>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Daloop. For informational purposes only.</p>
+</footer>
+
+<script>
+// Theme toggle
+const toggle = document.getElementById('themeToggle');
+const saved = localStorage.getItem('daloop-theme');
+if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+toggle?.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  localStorage.setItem('daloop-theme', isDark ? 'light' : 'dark');
+});
+</script>
+</body>
+</html>
